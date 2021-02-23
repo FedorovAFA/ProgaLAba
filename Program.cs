@@ -12,8 +12,8 @@ namespace FileOperationsSample
     }
     public class VirtualArray
     {
-        static string path = @"ArrayVirtual.txt";
-        public int SizeArray { get; }
+        private static string path = @"ArrayVirtual.txt";
+        private int SizeArray { get; }
         ListMemmory InMemory;
 
 
