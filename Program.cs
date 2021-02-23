@@ -355,6 +355,7 @@ namespace FileOperationsSample
         {
 
             VirtualArray virtualArray = new VirtualArray(10240);
+            virtualArray.WriteFile();
             int Ar = 0;
             int Choose = 0;
             while (Ar == 0)
@@ -366,7 +367,8 @@ namespace FileOperationsSample
                 Console.WriteLine("1) Вычисления адреса элемента массива");
                 Console.WriteLine("2) Чтения значения элемента массива");
                 Console.WriteLine("3) Записи заданного значения в элемент массива");
-                Console.WriteLine("4) Завершить работу");
+                Console.WriteLine("4) Вывести данные из файла");
+                Console.WriteLine("5) Завершить работу");
 
                 Choose = Convert.ToInt32(Console.ReadLine());
 
@@ -393,15 +395,18 @@ namespace FileOperationsSample
                         Console.WriteLine("Введите индекс в диапозоне от 0 и до 10240: ");
 
                         Console.WriteLine(virtualArray.ChangeValue(Convert.ToInt32(Console.ReadLine())));
+                        Console.WriteLine("Нажмите Enter для продолжения работы");
+                        Console.ReadLine();
+                        break;
+                    case 4:
 
-
-
+                        virtualArray.ReadFile();
                         Console.WriteLine("Нажмите Enter для продолжения работы");
                         Console.ReadLine();
                         break;
 
                 }
-                if (Choose == 4)
+                if (Choose == 5)
                     break;
                 Console.Clear();
             }
